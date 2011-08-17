@@ -58,14 +58,15 @@ call pathogen#helptags()
 " 
 
 " Vim UI 
+    set t_Co=16
 	"color ir_black     	       		" load a colorscheme
 	set background=dark     " Assume a dark background
 "    let g:solarized_termtrans=1
-"    let g:solarized_termcolors=256
+    let g:solarized_termcolors=16
 "    let g:solarized_contrast="high"
     let g:solarized_visibility="high"
-"    colorscheme solarized
-	colorscheme elflord
+    colorscheme solarized
+"	colorscheme elflord
 	set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
 
