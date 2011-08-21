@@ -10,4 +10,6 @@ nm-applet --sm-disable &
 
 gnome-volume-control-applet
 
+sleep 1
+
 dropbox start
