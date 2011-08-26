@@ -16,12 +16,27 @@
 
 " Basics 
 	set nocompatible 		" must be first line
+    filetype off
+
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+
 "	set term=builtin_ansi	" Fixes navigation with arrow keys in insert mode
 " 
 "
-"call pathogen#infect()
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+
+  Bundle "vundle"
+  Bundle "csv.vim"
+
+
+  Bundle "scrooloose/nerdtree"
+
+  Bundle "project.tar.gz"
+
+
+  Bundle "a.vim"
+  Bundle "altercation/vim-colors-solarized"
+  Bundle "SuperTab-continued."
 
 " General 
 	filetype plugin indent on  	" Automatically detect file types.
@@ -56,8 +71,6 @@ call pathogen#helptags()
 		"au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
 	" 
 " 
-
-" Vim UI 
     set t_Co=16
 	"color ir_black     	       		" load a colorscheme
 	set background=dark     " Assume a dark background
@@ -66,6 +79,8 @@ call pathogen#helptags()
 "    let g:solarized_contrast="high"
     let g:solarized_visibility="high"
     colorscheme solarized
+
+" Vim UI 
 "	colorscheme elflord
 	set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
