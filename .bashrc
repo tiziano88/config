@@ -23,8 +23,10 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export LD_LIBRARY_PATH=/usr
 export BOOST_HOME=/usr
-export ROSE_HOME=~/OP2_ROSE_Fortran/ROSE/rose-0.9.5a-13219_inst/
+export ROSE_HOME=~/OP2_ROSE_Fortran/ROSE/rose-0.9.5a-13219_inst
+export JAVA_HOME=/usr/lib/jvm/java-6-sun
+
+export LD_LIBRARY_PATH=$ROSE_HOME/lib:$JAVA_HOME/jre/lib/amd64/server:/usr
 
 set -o vi

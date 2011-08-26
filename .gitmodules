@@ -1,15 +1,6 @@
-[submodule ".vim/bundle/fugitive"]
-	path = .vim/bundle/fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/pyflakes"]
-	path = .vim/bundle/pyflakes
-	url = git://github.com/kevinw/pyflakes-vim.git
-[submodule ".vim/bundle/tagbar"]
-	path = .vim/bundle/tagbar
-	url = git://github.com/majutsushi/tagbar.git
-[submodule ".vim/bundle/solarized"]
-	path = .vim/bundle/solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule ".pydzen"]
 	path = .pydzen
 	url = https://github.com/xfire/pydzen.git
+[submodule ".vim/bundle/vundle"]
+	path = .vim/bundle/vundle
+	url = http://github.com/gmarik/vundle.git
