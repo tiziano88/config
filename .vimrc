@@ -16,12 +16,27 @@
 
 " Basics 
 	set nocompatible 		" must be first line
+    filetype off
+
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+
 "	set term=builtin_ansi	" Fixes navigation with arrow keys in insert mode
 " 
 "
-"call pathogen#infect()
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+
+  Bundle "vundle"
+  Bundle "csv.vim"
+
+
+  Bundle "scrooloose/nerdtree"
+
+  Bundle "project.tar.gz"
+
+
+  Bundle "a.vim"
+  Bundle "altercation/vim-colors-solarized"
+  Bundle "SuperTab-continued."
 
 " General 
 	filetype plugin indent on  	" Automatically detect file types.
@@ -56,8 +71,6 @@ call pathogen#helptags()
 		"au BufWinEnter * silent! loadview "make vim load view (state) (folds, cursor, etc)
 	" 
 " 
-
-" Vim UI 
     set t_Co=16
 	"color ir_black     	       		" load a colorscheme
 	set background=dark     " Assume a dark background
@@ -66,6 +79,8 @@ call pathogen#helptags()
 "    let g:solarized_contrast="high"
     let g:solarized_visibility="high"
     colorscheme solarized
+
+" Vim UI 
 "	colorscheme elflord
 	set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
@@ -320,4 +335,32 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 
     set diffopt+=iwhite "ignore whitespaces in vimdiff
 
-
+noremap <silent> <Leader>w :call ToggleWrap()<CR>
+function ToggleWrap()
+  if &wrap
+    echo "Wrap OFF"
+    setlocal nowrap
+    set virtualedit=all
+    silent! nunmap <buffer> <Up>
+    silent! nunmap <buffer> <Down>
+    silent! nunmap <buffer> <Home>
+    silent! nunmap <buffer> <End>
+    silent! iunmap <buffer> <Up>
+    silent! iunmap <buffer> <Down>
+    silent! iunmap <buffer> <Home>
+    silent! iunmap <buffer> <End>
+  else
+    echo "Wrap ON"
+    setlocal wrap linebreak nolist
+    set virtualedit=
+    setlocal display+=lastline
+    noremap  <buffer> <silent> <Up>   gk
+    noremap  <buffer> <silent> <Down> gj
+    noremap  <buffer> <silent> <Home> g<Home>
+    noremap  <buffer> <silent> <End>  g<End>
+    inoremap <buffer> <silent> <Up>   <C-o>gk
+    inoremap <buffer> <silent> <Down> <C-o>gj
+    inoremap <buffer> <silent> <Home> <C-o>g<Home>
+    inoremap <buffer> <silent> <End>  <C-o>g<End>
+  endif
+endfunction

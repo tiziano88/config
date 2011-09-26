@@ -1,3 +1,9 @@
 [submodule ".vim/bundle/solarized"]
 	path = .vim/bundle/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule ".pydzen"]
+	path = .pydzen
+	url = https://github.com/xfire/pydzen.git
+[submodule ".vim/bundle/vundle"]
+	path = .vim/bundle/vundle
+	url = http://github.com/gmarik/vundle.git
