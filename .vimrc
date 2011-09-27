@@ -28,6 +28,8 @@
   Bundle "vundle"
   Bundle "csv.vim"
 
+  Bundle "Rip-Rip/clang_complete"
+
 
   Bundle "scrooloose/nerdtree"
 
@@ -151,6 +153,22 @@
 	set expandtab
 
 " Key Mappings 
+    " Complete only the current buffer and includes
+    set complete=.,i
+
+    " Complete options (disable preview scratch window)
+    set completeopt=menu,menuone,longest
+
+    " SuperTab option for context aware completion
+    let g:SuperTabDefaultCompletionType="context"
+     
+    " Disable auto popup, use <Tab> to autocomplete
+    let g:clang_complete_auto=0
+    " Show clang errors in the quickfix window
+    let g:clang_complete_copen=1
+
+    "jj to normal mode
+    imap jj <Esc>
 
 	" Easier moving in tabs and windows
 	map <C-J> <C-W>j<C-W>_
