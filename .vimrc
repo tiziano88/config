@@ -30,6 +30,10 @@
 
   Bundle "Rip-Rip/clang_complete"
 
+  Bundle "msanders/snipmate.vim"
+
+  Bundle "tsaleh/vim-matchit"
+
 
   Bundle "scrooloose/nerdtree"
 
@@ -163,9 +167,9 @@
     let g:SuperTabDefaultCompletionType="context"
      
     " Disable auto popup, use <Tab> to autocomplete
-    let g:clang_complete_auto=0
+    let g:clang_complete_auto=1
     " Show clang errors in the quickfix window
-    let g:clang_complete_copen=1
+    let g:clang_complete_copen=0
 
     "jj to normal mode
     imap jj <Esc>
