@@ -38,7 +38,7 @@
 
   Bundle "a.vim"
   Bundle "altercation/vim-colors-solarized"
-  Bundle "SuperTab-continued."
+"  Bundle "SuperTab-continued."
 
 " General 
 	filetype plugin indent on  	" Automatically detect file types.
